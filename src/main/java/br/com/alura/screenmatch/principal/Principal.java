@@ -10,6 +10,7 @@ import ch.qos.logback.core.encoder.JsonEscapeUtil;
 import org.w3c.dom.ls.LSOutput;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -78,6 +79,8 @@ public class Principal {
 
         LocalDate dataBusca = LocalDate.of(ano, 1, 1);
 
+        DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        
         episodios.stream()
                 .filter(e ->e.getDataLancamento() != null && e.getDataLancamento().isAfter(dataBusca))
                 .forEach(e -> System.out.println(
