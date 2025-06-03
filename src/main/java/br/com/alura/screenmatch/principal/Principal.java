@@ -73,10 +73,10 @@ public class Principal {
         episodios.forEach(System.out::println);
 
         System.out.println("A partir de qual ano você deseja filtrar os episódios?");
-        var ano = leitura.nextLine();
+        var ano = leitura.nextInt();
         leitura.nextLine();
 
-        LocalDate dataBusca = LocalDate.of(Integer.parseInt(ano), 1, 1);
+        LocalDate dataBusca = LocalDate.of(ano, 1, 1);
 
         episodios.stream()
                 .filter(e ->e.getDataLancamento() != null && e.getDataLancamento().isAfter(dataBusca))
