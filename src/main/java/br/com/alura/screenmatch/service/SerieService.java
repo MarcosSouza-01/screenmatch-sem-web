@@ -58,4 +58,8 @@ public class SerieService {
         }
         return null;
     }
+
+    public List<EpisodioDTO> obterTemporadasPorNumero(Long id, Long numero) {
+
+    }
 }
